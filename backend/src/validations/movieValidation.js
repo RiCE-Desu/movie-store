@@ -38,7 +38,8 @@ export const createMovieSchema = z.object({
   stock: z
     .number()
     .int("stok harus bilangan bulat")
-    .nonnegative("stok tidak boleh negatif"),
+    .nonnegative("stok tidak boleh negatif")
+    .optional(),
 
   poster_url: z.string().optional(),
 });

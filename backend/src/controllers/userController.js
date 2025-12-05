@@ -30,8 +30,8 @@ export const getUserByIdHandler = async (req, res, next) => {
 
 export const addUserHandler = async (req, res, next) => {
     try {
-        const { fullname, username, email, password, role } = req.body;
-        const response = await UserService.addUser({ fullname, username, email, password, role });
+        const { fullname, username, email, password, role, address, phone_number, age } = req.body;
+        const response = await UserService.addUser({ fullname, username, email, password, role, address, phone_number, age, role: 'user'});
         res.status(201).json({
             status: "success",
             data: response,

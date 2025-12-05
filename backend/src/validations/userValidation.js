@@ -9,6 +9,15 @@ export const createUserSchema = z.object({
     email: z.string().email("email tidak valid"),
     password: z.string().min(6, "password minimal 6 karakter"),
     role: z.enum(["admin", "user"]),
+    address: z.string().min(5, "alamat minimal 5 karakter").optional(),
+    phone_number: z
+        .number()
+        .optional(),
+    age: 
+            z.number()
+            .gt(10, "umur minimal 10 tahun")
+            .lt(100, "umur maksimal 100 tahun")
+        .optional(),
 });
 
 export const updateUserSchema = z.object({

@@ -31,4 +31,9 @@ apiRouter.delete("/users/:id", deleteUserByIdHandler);
         MOVIES ROUTES
 ======================= */
 apiRouter.get("/movies", getAllMoviesHandler);
-apiRou  
+apiRouter.get("/movies/:id", getMovieByIdHandler);
+apiRouter.post("/movies", addMovieHandler);
+apiRouter.put("/movies/:id", updateMovieByIdHandler);
+apiRouter.delete("/movies/:id", deleteMovieByIdHandler);
+
+export default apiRouter;
